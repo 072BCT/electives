@@ -1,0 +1,88 @@
+.buttons {
+padding-bottom: 20px;
+padding-top: 20px;
+}
+
+.listbox {
+min-width: 500px;
+border-color: black;
+border-radius: 4px;
+background-color: grey;
+margin: auto;
+}
+.loginbackground
+{
+  background-color:#F8F8F8;
+  min-width: 100%; min-height: 100%;
+  overflow: auto;
+
+}
+
+#headingrelations  {
+color: #191970;
+}
+
+.headerstyle {
+background-color: #0066ff;
+
+}
+.headerimage {
+  width: 100px;
+height: auto;
+
+}
+
+.login-page {
+
+  width: 500px;
+  padding: 18% 0 0;
+  margin: auto;
+}
+.formStyle {
+  margin-bottom: 40px;
+
+}
+.headertitle {
+text-align: center;
+color: white;
+margin-top: 20px;
+}
+
+.headersubtitle {
+text-align: center;
+color: white;
+}
+.editForm {
+position: center;}
+
+.editForm {
+    width: 80%;
+    margin: 0 auto;
+}
+
+label, input {
+    /* in order to define widths */
+    display: inline-block;
+}
+
+label {
+    width: 30%;
+    /* positions the label text beside the input */
+    text-align: right;
+}
+
+label + input {
+    width: 30%;
+    /* large margin-right to force the next element to the new-line
+       and margin-left to create a gutter between the label and input */
+    margin: 0 30% 0 4%;
+}
+
+/* only the submit button is matched by this selector,
+   but to be sure you could use an id or class for that button */
+input + input {
+    float: right;
+}
+​
+
+}

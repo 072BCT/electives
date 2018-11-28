@@ -1,0 +1,62 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'electives/style.css' %}" />
+<title>{{ modelName }} </title>
+</head>
+<body>
+	<div class="container">
+
+		<div class ="row headerstyle">
+	<div class="col-2">
+		<!-- For now  	<img class="headerimage" src="{% static 'electives/tulogo.gif' %}" />-->
+	</div>
+	<div class="col-10">
+		<h2 class="headertitle"> Tribhuwan University </h2>
+		<h4 class="headersubtitle"> Institute of Engineering </h4>
+	</div>
+		</div>
+
+
+
+	{% if error %}
+		<p>{{ error }}</p>
+	{% else %}
+	<p><b> <center> <h2> Data from Model:  {{ modelName }} </h2> </center> </b></p>
+	<br>
+	{% if result %}
+	<table class="table table-striped table-bordered table-hover">
+		{% for row in result %}
+			<tr>
+				{% for elem in row %}
+					<td>{{ elem }}</td>
+				{% endfor %}
+				{% if forloop.counter > 1 %}
+				<td>
+					&emsp;
+					<a href="{{ forloop.counter }}">
+					<button type="button" class="btn btn-light">Edit </button></a> 
+					&emsp;
+					<a href="{{ forloop.counter }}/delete"> <button type="button" class="btn btn-danger">Delete</button></a>
+				</td>
+				{% endif %}
+			</tr>
+
+		{% endfor %}
+	</table>
+	{% if message%}
+	<p>{{ message }}</p>
+	{% endif %}
+	<center> <h4> <a href="{{ modelName }}/new" class="newRecord">Enter new record</a> </h4> </center>
+	<center> <h6> <p>Returned <b>{{ result|length }}</b> rows</p> </h6> </center>
+	{% endif %}
+	{% endif %}
+	</div>
+</body>
+
+</html>

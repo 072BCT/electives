@@ -1,0 +1,35 @@
+.justtry {
+background-color: red;
+
+}
+.headerstyle {
+background-color: #0066ff;
+
+}
+.newRecord {
+
+display: block;
+text-align: center;
+}
+.tableData {
+
+margin-top: 2000px; }
+
+
+.headertitle {
+text-align: center;
+color: white;
+margin-top: 20px;
+}
+
+.headersubtitle {
+text-align: center;
+color: white;
+}
+
+.headerimage{
+width: 100px;
+position: relative;
+height: auto;
+
+}

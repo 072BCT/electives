@@ -1,0 +1,56 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="{% static 'electives/css/bootstrap.min.css' %}" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{% static 'electives/style.css' %}" />
+<head>
+
+	<title>{{ modelName }}</title>
+</head>
+<body>
+	<!-- Header -->
+	<div class="container-fluid">
+
+		<div class ="row headerstyle">
+	<div class="col-2">
+	<img class="headerimage" src="{% static 'electives/tulogo.gif' %}" />
+	</div>
+	<div class="col-10">
+		<h2 class="headertitle"> Tribhuwan University </h2>
+		<h4 class="headersubtitle"> Institute of Engineering </h4>
+	</div>
+		</div>
+
+		<div class="row justify-content-center buttons">
+	<a style="color:white;" href="/relations">
+		<button type="button" class="btn btn-primary btn-sm"> <i class="fas fa-home"></i>Home</button>
+	</a>&emsp;
+	<a style="color:white;" href="/logout"><i class="fas fa-sign-out-alt">
+	<button type="button" class="btn btn-danger btn-sm"></i> Logout</button>
+	</a>
+	</div>
+
+
+	<!-- end of header -->
+<div class="row justify-content-center dataEntry">
+	<form action="" class="formStyle" method="post">
+				{% csrf_token %}
+				<table class="table table-bordered table-striped table-hover">
+	    	{{ form.as_table }}
+			</table>
+  <center> <button type="submit" class="btn btn-primary">Save </button> </center><br>
+  <center><a href="/relations">
+  <button type="button" class="btn btn-danger btn-sm">	
+			 Cancel </button>
+</a></center>
+	</form>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="{% static 'js/bootstrap.min.js' %}" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+</html>

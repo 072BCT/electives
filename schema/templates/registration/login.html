@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>Login</title>
+</head>
+<body>
+	<!-- Header -->
+	<div class="container-fluid loginbackground">
+		<div class ="row headerstyle">
+			<div class="col-4"> </div>
+	<div class="col-1">
+		<img class="headerimage" src="{% static 'electives/tulogo.gif' %}" />
+	</div>
+	<div class="col-5">
+		<h2 class="headertitle"> Tribhuwan University </h2>
+		<h4 class="headersubtitle"> Institute of Engineering </h4>
+	</div>
+		</div>
+
+	<!-- end of header -->
+	<div class="row">
+		<div class="login-page">
+		<div class="loginBox">
+		<div class="card bg-light mb-3" style="max-width: 40rem;">
+		  <div class="card-header"> <center> Login </center> </div>
+		  <div class="card-body">
+
+	<form action="" method="post">
+    	{% csrf_token %}
+    	{{ form.as_p }}
+    <center> <input class="btn btn-success" type="submit" value="Login" /> </center>
+	</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</body>
+</html>

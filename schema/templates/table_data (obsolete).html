@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ modelName }}</title>
+</head>
+<body>
+	{% if error %}
+		<p>{{ error }}</p>
+	{% else %}
+	<a href="/relations">Home</a>
+	<p><b>{{ modelName }}</b></p>
+	<br><br>
+	{% if result %}
+	<table>
+		{% for row in result %}
+			<tr>
+				{% for elem in row %}
+					<td>{{ elem }}</td>
+				{% endfor %}
+				{% if forloop.counter > 1 %}
+				<td>
+					&emsp;
+					<a href="{{ forloop.counter }}/"><u>Edit</u></a>
+					&emsp;
+					<a href="{{ forloop.counter }}/delete/"><u>Delete</u></a>
+				</td>
+				{% endif %}
+			</tr>
+
+		{% endfor %}
+	</table>
+	{% if message%}
+	<p>{{ message }}</p>
+	{% endif %}
+	<a href="new">Enter new record</a>
+	<p>Returned <b>{{ result|length }}</b> rows</p>
+	{% endif %}
+	{% endif %}
+</body>
+</html>
